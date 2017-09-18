@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+
+  "name": "AutoCorgi - AutoPlay That Works How You Want It",
+  "short_name": "AutoCorgi",
+  "description": "There aren't really any better videos you could be watching",
+  "version": "1.0",
+
+  "permissions": [
+    "tabs"
+  ],
+  "icons": {
+    "128": "assets/logo/c128.png",
+    "256": "assets/logo/c256.png",
+    "512": "assets/logo/c512.png",
+    "1024": "assets/logo/c1024.png"
+  },
+  "content_security_policy": "script-src 'self' https://www.youtube.com https://apis.google.com https://s.ytimg.com 'unsafe-eval'; object-src 'self'",
+  "content_scripts": [{
+      "js": ["js/youtube-player.js"],
+      "matches": ["https://*.youtube.com/*"]
+  }],
+  "web_accessible_resources": ["js/*"]
+}
